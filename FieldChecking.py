@@ -28,7 +28,7 @@ defaultvals = 'defaults/__text'
 default = 'toIgnorePartnerDefaults/__text'
 marcom = 'availableToMarcom/__text'
 
-
+"""
 #all fields that are simple text
 with open(CSV) as csvfile:     
 	test = FieldTests(csvfile)
@@ -37,7 +37,7 @@ with open(CSV) as csvfile:
 #all fields that are contextual
 with open(CSV) as csvfile:     
 	test = FieldTests(csvfile)
-	test.listallvalues(contextual,'TRUE')
+	test.listallfields(contextual,'TRUE')
 
 #all attributes for a single field
 with open(CSV) as csvfile:     
@@ -48,4 +48,13 @@ with open(CSV) as csvfile:
 with open(CSV) as csvfile:
 	test = FieldTests(csvfile)
 	test.valuetest('Social Icons',partneredit,'TRUE')
+
+with open(CSV) as csvfile:
+	test = FieldTests(csvfile)
+	test.listallattributes('Subject')
+
+"""
+with open(CSV) as csvfile:
+	test = FieldTests(csvfile)
+	test.completefieldtest('Email Options','checkbox','FALSE','TRUE','FALSE','FALSE','TRUE')
 
