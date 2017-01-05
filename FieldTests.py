@@ -20,23 +20,22 @@ class FieldTests(object):
 			if fieldname == row[self.Fieldname]:
 				if row[self.Fieldtype] != fieldtype:
 					print "Field type for {0} is {1} and should be {2}".format(fieldname,row[self.Fieldtype],fieldtype)
-				if row[self.Contextual] != contextual:
+				elif row[self.Contextual] != contextual:
 					print "Contextual value for {0} is {1} and should be {2}".format(fieldname,row[self.Contextual],contextual)
-				if row[self.Partneredit] != partneredit:
+				elif row[self.Partneredit] != partneredit:
 					print "Partner editability for {0} is {1} and should be {2}".format(fieldname,row[self.Partneredit],partneredit)
-				if row[self.Otherpers] != otherpers:
+				elif row[self.Otherpers] != otherpers:
 					print "Other personalization for {0} is {1} and should be {2}".format(fieldname,row[self.Otherpers],otherpers)
-				if row[self.Default] != default:
+				elif row[self.Default] != default:
 					print "Skip partner default setting for {0} is {1} and should be {2}".format(fieldname,row[self.Default],default)
-				if row[self.Marcom] != marcom:
+				elif row[self.Marcom] != marcom:
 					print "Marcom setting for {0} is {1} and should be {2}".format(fieldname,row[self.Marcom],marcom)
-
-				if values != None:
+				elif row[self.Values] != "None":
 					if row[self.Values] != values:
-						print "All values for {0} are {1} and should be {2}".format(fieldname,row[self.Values],values)
-				if defaultvals != None:
+						print "Value(s) for {0} are {1} and should be {2}".format(fieldname,row[self.Values],values)
+				elif row[self.Defaultvals] != "None":
 					if row[self.Defaultvals] != defaultvals:
-						print "All default values for {0} is {1} and should be {2}".format(fieldname,row[self.Defaultvals],values)
+						print "Default value(s) for {0} is {1} and should be {2}".format(fieldname,row[self.Defaultvals],defaultvals)
 
 
 	def typetest(self,list,value):
@@ -44,7 +43,7 @@ class FieldTests(object):
 		for row in self.reader:
 			if row[self.Fieldname] in list:
 				if row[self.fFieldtype] != value:
-					print row[self.Fieldname] + " is not " + value
+					print "{0} is not {1}".format(row[self.Fieldname],value)
 
 	def valuetest(self,fieldname,key,value):
 
@@ -53,7 +52,7 @@ class FieldTests(object):
 				if row[key] == value:
 					print "The setting is correct."
 				else:
-					print "The " + key + " value for " + fieldname + " is not " + value .format(key,fieldname,value)
+					print "The {0} value for {1} is not {2}".format(key,fieldname,value)
 
 	def listallfields(self,key,value):
 
@@ -65,11 +64,11 @@ class FieldTests(object):
 
 		for row in self.reader:
 			if fieldname == row[self.Fieldname]:
-				print "Field type: " + row[self.Fieldtype]
-				print "Contextual: " + row[self.Contextual]
-				print "Partner Editable: " + row[self.Partneredit]
-				print "Other personalization: " + row[self.Otherpers]
-				print "Values: " + row[self.Values]
-				print "Default Values: " + row[self.Defaultvals]
-				print "Skip partner defaulting: " + row[self.Default]
-				print "Viewable in Marcom: " + row[self.Marcom]
+				print "Field type: {0}".format(row[self.Fieldtype])
+				print "Contextual: {0}".format(row[self.Contextual])
+				print "Partner Editable: {0}".format(row[self.Partneredit])
+				print "Other personalization: {0}".format(row[self.Otherpers])
+				print "Values: {0}".format(row[self.Values])
+				print "Default Values: {0}".format(row[self.Defaultvals])
+				print "Skip partner defaulting: {0}".format(row[self.Default])
+				print "Viewable in Marcom: {0}".format(row[self.Marcom])
