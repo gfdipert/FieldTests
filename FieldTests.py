@@ -4,6 +4,9 @@ class FieldTests(object):
 
 	def __init__(self,csvfile):
 		self.reader = csv.DictReader(csvfile)
+		self.rows = []
+		for row in self.reader:
+			self.rows.append(row)
 		self.Fieldname = 'name/__text'
 		self.Fieldtype = 'fieldType/__text'
 		self.Contextual = 'contextualField/__text'
@@ -16,7 +19,7 @@ class FieldTests(object):
 
 	def completefieldtest(self,fieldname,fieldtype,contextual,partneredit,otherpers,default,marcom,values=None,defaultvals=None):
 
-		for row in self.reader:
+		for row in self.rows:
 			if fieldname == row[self.Fieldname]:
 				if row[self.Fieldtype] != fieldtype:
 					print "Field type for {0} is {1} and should be {2}".format(fieldname,row[self.Fieldtype],fieldtype)
@@ -30,12 +33,14 @@ class FieldTests(object):
 					print "Skip partner default setting for {0} is {1} and should be {2}".format(fieldname,row[self.Default],default)
 				elif row[self.Marcom] != marcom:
 					print "Marcom setting for {0} is {1} and should be {2}".format(fieldname,row[self.Marcom],marcom)
-				elif row[self.Values] != "None":
+				
+				"""if row[self.Values] != "None":
 					if row[self.Values] != values:
 						print "Value(s) for {0} are {1} and should be {2}".format(fieldname,row[self.Values],values)
-				elif row[self.Defaultvals] != "None":
+				if row[self.Defaultvals] != "None":
 					if row[self.Defaultvals] != defaultvals:
 						print "Default value(s) for {0} is {1} and should be {2}".format(fieldname,row[self.Defaultvals],defaultvals)
+				"""
 
 
 	def typetest(self,list,value):
