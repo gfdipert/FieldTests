@@ -1,8 +1,3 @@
-"""
-excel formula 
-=CONCATENATE("completefieldtest(",A2,B2,C2,",",C2,D2,E2,",",E2,F2,G2,",",G2,H2,I2,",",I2,J2,K2,",",K2,L2,M2,",",M2,N2,O2,",",O2,P2,Q2,",",Q2,R2,S2,")")
-"""
-
 from FieldTests import FieldTests
 CSV = raw_input('Enter CSV file name: ')
 

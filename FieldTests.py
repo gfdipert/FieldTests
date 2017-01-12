@@ -3,6 +3,8 @@ import csv
 class FieldTests(object):
 
 	def __init__(self,csvfile):
+
+		#parse testing CSV file
 		self.reader = csv.DictReader(csvfile)
 		self.rows = []
 		for row in self.reader:
@@ -41,7 +43,6 @@ class FieldTests(object):
 					if row[self.Defaultvals] != defaultvals:
 						print "Default value(s) for {0} is {1} and should be {2}".format(fieldname,row[self.Defaultvals],defaultvals)
 				"""
-
 
 	def typetest(self,list,value):
 
