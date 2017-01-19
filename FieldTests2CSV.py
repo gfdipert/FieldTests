@@ -16,6 +16,11 @@ class FieldTests(object):
 		for refrow in self.refreader:
 			self.refrows.append(refrow)
 
+		#creates list of ref CSV field names
+		self.refnames = []
+		for refrow in self.refreader:
+			self.refnames.append(refrow[self.Fieldname])
+
 		self.Fieldname = 'name/__text'
 		self.Fieldtype = 'fieldType/__text'
 		self.Contextual = 'contextualField/__text'
@@ -42,3 +47,8 @@ class FieldTests(object):
 						print "Skip partner defaulting for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Default],refrow[self.Default])
 					elif refrow[self.Marcom] != row[self.Marcom]:
 						print "Viewable in Marcom for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Marcom],refrow[self.Marcom])
+
+	def newfields(self)):
+		for row in self.rows:
+			if row[self.Fieldname] not in self.refnames:
+				print "Looks like {0} isn't a field name in the reference CSV".format(row[self.Fieldname])
