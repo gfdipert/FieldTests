@@ -42,3 +42,4 @@ class FieldTests(object):
 						print "Skip partner defaulting for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Default],refrow[self.Default])
 					elif refrow[self.Marcom] != row[self.Marcom]:
 						print "Viewable in Marcom for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Marcom],refrow[self.Marcom])
+			#add condition that lists all unknown fields
