@@ -11,4 +11,4 @@ with open(CSV) as csvfile:
 		test = FieldTests(csvfile,refcsvfile)
 		#test.refcompletefieldtest()
 		test.newfields()
-		test.defaultvalsprint()
+		#test.defaultvalsprint()
