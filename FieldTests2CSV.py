@@ -11,7 +11,7 @@ class FieldTests(object):
 		self.Otherpers = 'otherDisplayOption/__text'
 		self.Values = 'values/__text'
 		self.Defaultvals = 'defaults/__text'
-		self.Default = 'toIgnorePartnerDefaults/__text'
+		self.Ignore = 'toIgnorePartnerDefaults/__text'
 		self.Marcom = 'availableToMarcom/__text'
 
 		#parse testing CSV file
@@ -43,20 +43,20 @@ class FieldTests(object):
 				self.defaultvals[row[self.Fieldname]] = row[self.Defaultvals]
 
 	def refcompletefieldtest(self):
-		for row in self.rows:
-			for refrow in self.refrows:
+		for refrow in self.refrows:
+			for row in self.rows:
 				if refrow[self.Fieldname] == row[self.Fieldname]:
 					if refrow[self.Fieldtype] != row[self.Fieldtype]:
 						print "Field type for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Fieldtype],refrow[self.Fieldtype])
-					elif refrow[self.Contextual] != row[self.Contextual]:
+					if refrow[self.Contextual] != row[self.Contextual]:
 						print "Contextual value for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Contextual],refrow[self.Contextual])
-					elif refrow[self.Partneredit] != row[self.Partneredit]:
+					if refrow[self.Partneredit] != row[self.Partneredit]:
 						print "Partner editability for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Partneredit],refrow[self.Partneredit])
-					elif refrow[self.Otherpers] != row[self.Otherpers]:
+					if refrow[self.Otherpers] != row[self.Otherpers]:
 						print "Other personalization for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Otherpers],refrow[self.Otherpers])
-					elif refrow[self.Default] != row[self.Default]:
-						print "Skip partner defaulting for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Default],refrow[self.Default])
-					elif refrow[self.Marcom] != row[self.Marcom]:
+					if refrow[self.Ignore] != row[self.Ignore]:
+						print "Skip partner defaulting for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Ignore],refrow[self.Ignore])
+					if refrow[self.Marcom] != row[self.Marcom]:
 						print "Viewable in Marcom for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Marcom],refrow[self.Marcom])
 
 	def newfields(self):
