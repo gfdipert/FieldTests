@@ -71,6 +71,9 @@ class FieldTests(object):
 	def defaultvalsprint(self):
 		print "Here are the default values for the non-contextual fields:"
 		for key in self.defaultvals:
-			print "{0} : {1}".format(key,self.defaultvals[key])
+			if self.defaultvals[key] == "":
+				pass
+			else:
+				print "{0} : {1}".format(key,self.defaultvals[key])
 
 
