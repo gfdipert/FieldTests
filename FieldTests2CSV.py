@@ -58,6 +58,16 @@ class FieldTests(object):
 						print "Skip partner defaulting for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Ignore],refrow[self.Ignore])
 					if refrow[self.Marcom] != row[self.Marcom]:
 						print "Viewable in Marcom for {0} is {1} and should be {2}".format(refrow[self.Fieldname],row[self.Marcom],refrow[self.Marcom])
+				if row[self.Fieldname] == 'radio':
+					if row[self.Marcom] == 'true' and row[self.Contextual] == 'true' and row[self.Partneredit] == 'true':
+						print "{0} is a {1} and is viewable in Marcom, contextual, and available for personalization".format(row[self.Fieldname],row[self.Fieldtype])
+				if row[self.Fieldname] == 'checkbox':
+					if row[self.Marcom] == 'true' and row[self.Contextual] == 'true' and row[self.Partneredit] == 'true':
+						print "{0} is a {1} and is viewable in Marcom, contextual, and available for personalization".format(row[self.Fieldname],row[self.Fieldtype])
+				if row[self.Fieldname] == 'colorpicker':
+					if row[self.Marcom] == 'true' and row[self.Contextual] == 'true' and row[self.Partneredit] == 'true':
+						print "{0} is a {1} and is viewable in Marcom, contextual, and available for personalization".format(row[self.Fieldname],row[self.Fieldtype])
+
 
 	def newfields(self):
 		missingfields = []
