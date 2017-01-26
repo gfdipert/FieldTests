@@ -86,4 +86,3 @@ class FieldTests(object):
 			else:
 				print "{0} : {1}".format(key,self.defaultvals[key])
 
-
