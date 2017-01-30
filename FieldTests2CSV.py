@@ -75,14 +75,12 @@ class FieldTests(object):
 			if fieldname not in self.refnames:
 				missingfields.append(fieldname)
 		print "This is a list of fields being used in your CSV that aren't in the Reference CSV:"
-		print missingfields
+		for item in missingfields:
+			print item
 
 
 	def defaultvalsprint(self):
 		print "Here are the default values for the non-contextual fields:"
 		for key in self.defaultvals:
-			if self.defaultvals[key] == "":
-				pass
-			else:
-				print "{0} : {1}".format(key,self.defaultvals[key])
+			print "{0} : {1}".format(key,self.defaultvals[key])
 
