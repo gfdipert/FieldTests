@@ -33,13 +33,11 @@ with open(CSV) as csvfile:
 		test = FieldTests(csvfile,refcsvfile)
 
 		#Run a complete field test
-		test.refcompletefieldtest()
+		#test.refcompletefieldtest()
 
 		#Find all new fields
 		#test.newfields()
 
 		#List all default values for non-contextual fields
-		#test.defaultvalsprint()
-
-#doesn't work if you change values in the CSV
+		test.defaultvalsprint()
 
